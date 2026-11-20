@@ -20,13 +20,3 @@ node --input-type=module -e "import { findMissingNumber } from './evdokimov.arte
 ```
 
 Результат: `3`.
-
-## Запуск
-
-Из корня репозитория выполните:
-
-```bash
-node --input-type=module -e "import {findMissingNumber} from './evdokimov.artem/lab2/solution.js'; console.log(findMissingNumber([1, 2, 4, 5]));"
-```
-
-Результат: `3`.
