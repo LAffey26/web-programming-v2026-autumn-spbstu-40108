@@ -4,98 +4,47 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Лента постов</title>
-    <link rel="icon" href="data:," />
     <link rel="stylesheet" href="styles.css" />
     <script type="module" src="main.js"></script>
   </head>
   <body>
-    <header class="site-header">
-      <div class="header-inner">
-        <span class="brand-mark" aria-hidden="true">Б</span>
-        <span class="brand-name">Блог <span> / </span> лента</span>
-      </div>
-    </header>
-    <main class="page">
-      <div class="page-heading">
-        <div>
-          <p class="eyebrow">ВАШЕ ПРОСТРАНСТВО</p>
-          <h1>Лента постов</h1>
-          <p class="page-description">
-            Делитесь записями и обсуждайте их в комментариях.
-          </p>
-        </div>
-      </div>
-      <section class="composer" aria-labelledby="composer-title">
-        <div class="section-heading">
-          <div>
-            <h2 id="composer-title">Новый пост</h2>
-            <p>Придумайте заголовок, чтобы начать обсуждение.</p>
-          </div>
-        </div>
-        <form class="post-form" data-testid="entity-form">
-          <div class="field">
-            <label for="post-id"
-              >Номер поста <span class="optional">необязательно</span></label
-            >
-            <input
-              id="post-id"
-              name="id"
-              type="number"
-              min="1"
-              step="1"
-              placeholder="Автоматически"
-            />
-          </div>
-          <div class="field field-title">
-            <label for="post-title">Заголовок</label>
-            <input
-              id="post-title"
-              name="title"
-              type="text"
-              placeholder="О чём ваша запись?"
-              required
-            />
-          </div>
-          <div class="field field-content">
-            <label for="post-content"
-              >Текст поста <span class="optional">необязательно</span></label
-            >
-            <textarea
-              id="post-content"
-              name="content"
-              rows="3"
-              placeholder="Поделитесь мыслями..."
-            ></textarea>
-          </div>
-          <div class="field field-tags">
-            <label for="post-tags"
-              >Теги <span class="optional">через запятую</span></label
-            >
-            <input
-              id="post-tags"
-              name="tags"
-              type="text"
-              placeholder="Например: учёба, javascript"
-            />
-          </div>
-          <button class="primary-button" type="submit">Добавить пост</button>
-        </form>
-        <p class="error" role="alert" data-error></p>
-      </section>
-      <div class="feed-heading">
-        <h2>Все посты</h2>
-        <span class="count-badge">Постов: <span data-count>0</span></span>
-      </div>
-      <section
-        class="feed"
-        aria-label="Список постов"
-        data-testid="entity-list"
-      ></section>
-      <div class="empty-state" data-empty>
-        <div class="empty-icon" aria-hidden="true">✦</div>
-        <h2>Здесь пока тихо</h2>
-        <p>Добавьте первый пост, чтобы начать обсуждение.</p>
-      </div>
+    <main>
+      <h1>Лента постов</h1>
+      <h2>Новый пост</h2>
+      <form data-testid="entity-form">
+        <label>
+          Номер поста
+          <input
+            id="post-id"
+            name="id"
+            type="number"
+            min="1"
+            step="1"
+            placeholder="Автоматически"
+          />
+        </label>
+        <label>
+          Заголовок
+          <input id="post-title" name="title" type="text" required />
+        </label>
+        <label>
+          Текст поста
+          <textarea id="post-content" name="content" rows="3"></textarea>
+        </label>
+        <label>
+          Теги через запятую
+          <input id="post-tags" name="tags" type="text" />
+        </label>
+        <button type="submit">Добавить пост</button>
+      </form>
+      <p role="alert" data-error></p>
+      <h2>Посты (<span data-count>0</span>)</h2>
+      <label>
+        Поиск по тегу
+        <input id="tag-search" type="search" placeholder="Например, учёба" />
+      </label>
+      <section aria-label="Список постов" data-testid="entity-list"></section>
+      <p data-empty>Постов пока нет.</p>
     </main>
   </body>
 </html>
