@@ -242,6 +242,7 @@ postForm.addEventListener('submit', (event) => {
   event.preventDefault();
   const data = new FormData(postForm);
   const title = String(data.get('title')).trim();
+  const requestedId = String(data.get('id') || '').trim();
   const content = String(data.get('content') || '').trim();
   const tags = [
     ...new Set(
@@ -255,7 +256,14 @@ postForm.addEventListener('submit', (event) => {
     return;
   }
   update(() => {
-    posts.push(new BlogPost(nextPostId(), title, tags, [], content));
+    const id = requestedId ? Number(requestedId) : nextPostId();
+    if (!Number.isSafeInteger(id) || id < 1) {
+      throw new Error('Введите положительный целый номер поста.');
+    }
+    if (posts.some((post) => post.id === id)) {
+      throw new Error('Пост с таким номером уже существует.');
+    }
+    posts.push(new BlogPost(id, title, tags, [], content));
     postForm.reset();
   });
 });

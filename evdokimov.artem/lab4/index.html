@@ -33,6 +33,19 @@
           </div>
         </div>
         <form class="post-form" data-testid="entity-form">
+          <div class="field">
+            <label for="post-id"
+              >Номер поста <span class="optional">необязательно</span></label
+            >
+            <input
+              id="post-id"
+              name="id"
+              type="number"
+              min="1"
+              step="1"
+              placeholder="Автоматически"
+            />
+          </div>
           <div class="field field-title">
             <label for="post-title">Заголовок</label>
             <input
