@@ -1,0 +1,472 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #0d1117;
+  color: #e6edf3;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.site-header {
+  border-bottom: 1px solid #30363d;
+  background: #161b22;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 960px;
+  margin: auto;
+  padding: 16px 24px;
+}
+
+.brand-mark {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 10px;
+  background: #72b6ff;
+  color: #0d1117;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.brand-name {
+  font-weight: 700;
+}
+
+.brand-name span {
+  padding: 0 5px;
+  color: #8b949e;
+}
+
+.page {
+  max-width: 960px;
+  margin: auto;
+  padding: 52px 24px 80px;
+}
+
+.page-heading {
+  margin-bottom: 32px;
+}
+
+.eyebrow,
+.post-number {
+  margin: 0 0 8px;
+  color: #79c0ff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 8px;
+  font-size: 36px;
+  letter-spacing: -0.03em;
+}
+
+.page-description,
+.section-heading p,
+.hint,
+.post-meta {
+  margin-bottom: 0;
+  color: #a8b3c0;
+}
+
+.composer,
+.post-card,
+.empty-state {
+  border: 1px solid #30363d;
+  border-radius: 14px;
+  background: #161b22;
+}
+
+.composer {
+  padding: 24px;
+}
+
+.section-heading h2,
+.feed-heading h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.section-heading p {
+  margin-top: 5px;
+}
+
+.post-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px 16px;
+  margin-top: 24px;
+}
+
+.field-content {
+  grid-column: 1 / -1;
+}
+
+label {
+  display: block;
+  color: #d4dce6;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.optional {
+  color: #8b949e;
+  font-weight: 400;
+}
+
+input,
+textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  margin-top: 7px;
+  padding: 11px 12px;
+  border: 1px solid #424c58;
+  border-radius: 8px;
+  background: #0d1117;
+  color: #e6edf3;
+  font: inherit;
+  font-weight: 400;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  padding: 10px 16px;
+  border: 1px solid #424c58;
+  border-radius: 8px;
+  background: #21262d;
+  color: #e6edf3;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+input:focus,
+textarea:focus,
+summary:focus-visible,
+button:focus-visible {
+  outline: 2px solid #58a6ff;
+  outline-offset: 2px;
+}
+
+button:hover {
+  background: #303b49;
+}
+
+.post-form button {
+  grid-column: 1 / -1;
+  justify-self: start;
+}
+
+.primary-button {
+  border-color: #79c0ff;
+  background: #79c0ff;
+  color: #0d1117;
+}
+
+.primary-button:hover {
+  background: #a5d4ff;
+}
+
+.error {
+  margin: 12px 0 0;
+  color: #ff8c8c;
+}
+
+.error:empty {
+  display: none;
+}
+
+.feed-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 40px 0 16px;
+}
+
+.count-badge {
+  padding: 4px 11px;
+  border: 1px solid #30363d;
+  border-radius: 20px;
+  color: #a8b3c0;
+  font-size: 14px;
+}
+
+.feed {
+  display: grid;
+  gap: 14px;
+}
+
+.post-card {
+  position: relative;
+  padding: 24px;
+  overflow-wrap: anywhere;
+}
+
+.post-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-right: 150px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.post-summary::-webkit-details-marker {
+  display: none;
+}
+
+.card-title h2 {
+  margin: 0 0 6px;
+  font-size: 22px;
+}
+
+.post-meta {
+  font-size: 14px;
+}
+
+.open-label {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  flex-shrink: 0;
+  color: #79c0ff;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.post-content {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #30363d;
+}
+
+.post-text {
+  margin: 0 0 24px;
+  white-space: pre-wrap;
+}
+
+.block-label {
+  margin: 0 0 10px;
+  font-size: 15px;
+}
+
+.comment-heading,
+.tag-heading {
+  margin-top: 24px;
+}
+
+.hint {
+  font-size: 14px;
+}
+
+.tags,
+.comments {
+  margin: 0 0 16px;
+  padding: 0;
+  list-style: none;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tags li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 8px 5px 12px;
+  border: 1px solid #275a80;
+  border-radius: 20px;
+  background: #102b40;
+  color: #a5d4ff;
+  font-size: 14px;
+}
+
+.remove-tag {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #a5d4ff;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.inline-form {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.inline-form button {
+  justify-self: start;
+}
+
+.comment {
+  margin-top: 12px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  background: #0d1117;
+}
+
+.comment strong {
+  font-size: 14px;
+}
+
+.comment p {
+  margin: 5px 0 0;
+  white-space: pre-wrap;
+}
+
+.delete-post {
+  margin-top: 22px;
+  color: #ffaaa4;
+}
+
+.empty-state {
+  padding: 44px 24px;
+  text-align: center;
+}
+
+.empty-state[hidden] {
+  display: none;
+}
+
+.empty-icon {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 14px;
+  place-items: center;
+  border-radius: 14px;
+  background: #183246;
+  color: #79c0ff;
+  font-size: 24px;
+}
+
+.empty-state h2 {
+  margin: 0 0 6px;
+  font-size: 20px;
+}
+
+.empty-state p {
+  margin: 0;
+  color: #a8b3c0;
+}
+
+@media (width <= 560px) {
+  .page {
+    padding: 32px 16px 60px;
+  }
+
+  .header-inner {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .composer,
+  .post-card {
+    padding: 18px;
+  }
+
+  .post-form {
+    grid-template-columns: 1fr;
+  }
+
+  .field-content,
+  .post-form button {
+    grid-column: auto;
+  }
+}
+
+.edit-form {
+  display: grid;
+  gap: 12px;
+}
+
+.edit-form button {
+  justify-self: start;
+}
+
+.header-tags {
+  margin: 8px 0;
+}
+
+.edit-post {
+  position: absolute;
+  top: 24px;
+  right: 105px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #79c0ff;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.edit-post:hover {
+  background: transparent;
+  color: #a5d4ff;
+}
+
+.editing-tags {
+  margin: 8px 150px 0 0;
+}
+
+.tags .add-tag-item {
+  padding: 0;
+  border-color: #3a624a;
+  background: #163a27;
+}
+
+.add-tag-button {
+  padding: 5px 12px;
+  border: 0;
+  border-radius: 20px;
+  background: transparent;
+  color: #91e3ab;
+}
+
+.add-tag-button:hover {
+  background: #235238;
+}
+
+.tag-form:not([hidden]) {
+  display: flex;
+  gap: 6px;
+  padding: 4px;
+}
+
+.tag-form input {
+  width: 150px;
+  padding: 4px 8px;
+}
+
+.tag-form button {
+  padding: 4px 8px;
+}
